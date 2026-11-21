@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+/*
+ * COSMOS — Global CSS
+ *
+ * Design tokens are exposed as CSS custom properties so both
+ * Tailwind utilities and inline styles can reference them.
+ */
+
+:root {
+  /* ── Colors ── */
+  --cosmos-void:            #020309;
+  --cosmos-deep-space:      #02030a;
+  --cosmos-nebula:          #050c1a;
+  --cosmos-surface:         #0a0f1e;
+
+  --cosmos-starlight:       #e8f4ff;
+  --cosmos-stellar-blue:    #4a9eff;
+  --cosmos-nebula-violet:   #7c5cfc;
+  --cosmos-teal:            #00c9b1;
+  --cosmos-solar-gold:      #f5a623;
+  --cosmos-mars-red:        #e05a3a;
+
+  --cosmos-text-primary:    #e8f4ff;
+  --cosmos-text-secondary:  #8899bb;
+  --cosmos-text-muted:      #445577;
+  --cosmos-text-disabled:   #2a3550;
+
+  --cosmos-glass-border:    rgba(255,255,255,0.08);
+  --cosmos-glass-bg:        rgba(5,12,26,0.72);
+  --cosmos-glass-highlight: rgba(255,255,255,0.04);
+
+  /* ── Typography ── */
+  --cosmos-font-display:    "Space Grotesk", "Inter", system-ui, sans-serif;
+  --cosmos-font-mono:       "Space Mono", "JetBrains Mono", monospace;
+  --cosmos-font-body:       "Inter", system-ui, sans-serif;
+}
+
+/* ── Reset ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  background: var(--cosmos-deep-space);
+  color: var(--cosmos-text-primary);
+  font-family: var(--cosmos-font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Spinner animation ── */
+@keyframes cosmos-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ── Scrollbar styling ── */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--cosmos-glass-border);
+  border-radius: 999px;
+}
+
+/* ── Focus ring override for keyboard users ── */
+:focus-visible {
+  outline: 2px solid var(--cosmos-stellar-blue);
+  outline-offset: 2px;
+}
+
+/* ── Selection ── */
+::selection {
+  background: rgba(74,158,255,0.25);
+  color: var(--cosmos-starlight);
+}
